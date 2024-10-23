@@ -1,1 +1,90 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif, 'Roboto';
+}
 
+.person:hover {
+    transition: 1s;
+    transform: scale(1.2);
+    background-color: #EEEEEE;
+    border-radius: 10px;
+}
+
+.people {
+    --column-count: 2;
+
+    display: grid;
+    grid-template-columns: repeat(var(--column-count), 200px);
+    gap: 30px 40px;
+    justify-content: center;
+}
+
+.photo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 200px;
+    border-radius: 100px;
+}
+
+.photo:hover {
+    transition: 1s;
+    transform: scale(border-radius 60px);
+}
+
+.rank {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    top: 50%;
+    right: 10px;
+    border-radius: 16px;
+    background-color: white;
+}
+.name {
+    display: flex;
+    justify-content: center;
+    color: #2F4F4F;
+    size: 20px;
+}
+
+.sport {
+    display: flex;
+    justify-content: center;
+    size: 18px;
+}
+
+.sport::after {
+    content: ", ";
+}
+
+.pay {
+    display: flex;
+    justify-content: center;
+    size: 18px;
+}
+
+.pay::before {
+    content: "$";
+}
+
+.pay::after {
+    content: "M";
+}
+
+@media (min-width: 1000px) {
+    .people {
+        --column-count: 3;
+    }
+}
+
+@media (min-width: 1500px) {
+    .people {
+        --column-count: 4;
+    }
+}
